@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Employee Timesheet</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+
+    <div class="container">
+
+        <div class="jumbotron">
+            <h1 class="text-center">
+                <strong>Employee Data Management</strong>
+            </h1>
+            <h2>
+                A comprehensive Directory of Employee Billable Hours
+            </h2>
+            <hr>
+
+        </div>
+
+        <table class="table table-bordered">
+            <thead>
+                <h2>
+                    <strong>Current Employees</strong>
+                </h2>
+              <tr>
+                <th scope="col">Employee Name</th>
+                <th scope="col">Role</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">Months Worked</th>
+                <th scope="col">Monthly Rate ($)</th>
+                <th scope="col">Total Billed ($)</th>
+              </tr>
+            </thead>
+            <tbody id="dataRow">
+            </tbody>
+          </table>
+
+    </div>
+
+    <div class = "row">
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Add New Employee</h3>
+                </div>
+                <div class="card-body">
+                  <form role="form">
+                    <div class="form-group">
+                      <label for="name-input">Name:</label>
+                      <input class="form-control" id="name-input" type="text">
+                    </div>
+                    <div class="form-group">
+                      <label for="role-input">Role:</label>
+                      <input class="form-control" id="role-input" type="text">
+                    </div>
+                    <div class="form-group">
+                      <label for="start-input">Start Date:</label>
+                      <input class="form-control" id="start-input" type="date">
+                    </div>
+                    <div class="form-group">
+                            <label for="rate-input">Months Worked:</label>
+                            <input class="form-control" id="months-worked" type="number">
+                          </div>
+                    <div class="form-group">
+                      <label for="rate-input">Monthly Rate:</label>
+                      <input class="form-control" id="rate-input" type="number">
+                    </div>
+                    <button class="btn btn-primary" id="add-user" type="submit">Submit</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        
+            
+
+
+
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/es-us.js"></script> -->
+<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+<script src="assets/javascript/app.js"></script>
+</html>
