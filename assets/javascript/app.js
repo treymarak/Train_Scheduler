@@ -22,11 +22,24 @@ $("#add-user").on("click", function (event) {
     var firstTrain = $("#time-input").val().trim();
     var frequency = $("#frequency-input").val().trim();
 
+    var firstTrainMoment = moment(firstTrain, "HH:mm");
+    var nowMoment = moment();
+  
+    var minutesSinceFirstArrival = nowMoment.diff(firstTrainMoment, "minutes");
+    var minutesSinceLastArrival = minutesSinceFirstArrival % frequency;
+    var minutesAway = frequency - minutesSinceLastArrival;
+  
+    var nextArrival = nowMoment.add(minutesAway, "minutes");
+    var formatNextArrival = nextArrival.format("HH:mm");
+
+    
 
     console.log(trainName);
     console.log(destination);
     console.log(firstTrain);
     console.log(frequency);
+    console.log(formatNextArrival);
+    console.log(minutesAway);
 
 
 
@@ -35,6 +48,8 @@ $("#add-user").on("click", function (event) {
         destination: destination,
         firstTrain: firstTrain,
         frequency: frequency,
+        formatNextArrival: formatNextArrival,
+        minutesAway: minutesAway,
     });
 
 });
@@ -45,17 +60,6 @@ $("#add-user").on("click", function (event) {
         
         var tableItem = $("<tr>");
         var row = $("<td>")
-
-        var firstTrainMoment = moment(firstTrain, "HH:mm");
-        var nowMoment = moment();
-      
-        var minutesSinceFirstArrival = nowMoment.diff(firstTrainMoment, "minutes");
-        var minutesSinceLastArrival = minutesSinceFirstArrival % frequency;
-        var minutesAway = frequency - minutesSinceLastArrival;
-      
-        var nextArrival = nowMoment.add(minutesAway, "minutes");
-        var formatNextArrival = nextArrival.format("HH:mm");
-        
 
 
         row = $("<td>" + snapshot.val().trainName + "</td>");
