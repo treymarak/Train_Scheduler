@@ -15,6 +15,11 @@ var database = firebase.database();
 
 $("#add-user").on("click", function (event) {
     event.preventDefault();
+    $("#name-input").empty();
+    $("#destination-input").empty();
+    $("#time-input").empty();
+    $("#frequency-input").empty();
+
 
 
     var trainName = $("#name-input").val().trim();

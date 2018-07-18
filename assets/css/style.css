@@ -1,4 +1,40 @@
+.jumbotron{
+
+    background-color: red;
+
+}
+
+.card-header{
+
+
+    background-color: white;
+
+
+}
+
+
+#add-train{
+
+
+    background-color: blue;
+    color: white;
+
+
+
+}
+
+
 h4{
 
     text-align: center;
 }
+
+
+#add-user{
+
+   
+    background-color: blue;
+
+
+}
+
