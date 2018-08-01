@@ -15,11 +15,6 @@ var database = firebase.database();
 
 $("#add-user").on("click", function (event) {
     event.preventDefault();
-    $("#name-input").empty();
-    $("#destination-input").empty();
-    $("#time-input").empty();
-    $("#frequency-input").empty();
-
 
 
     var trainName = $("#name-input").val().trim();
@@ -36,6 +31,12 @@ $("#add-user").on("click", function (event) {
   
     var nextArrival = nowMoment.add(minutesAway, "minutes");
     var formatNextArrival = nextArrival.format("HH:mm");
+
+
+    $("#name-input").val("");
+    $("#destination-input").val("");
+    $("#time-input").val("");
+    $("#frequency-input").val("");
 
     
 
